@@ -4,65 +4,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Youssef Sameh - Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    header {
-      background: #222;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-    .cv-link {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background: #0073e6;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-    .cv-link:hover {
-      background: #005bb5;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-900 text-white font-sans">
 
-  <header>
-    <h1>Youssef Sameh</h1>
-    <p>Welcome to my portfolio</p>
-  </header>
-
-  <div class="container">
-    <h2>About Me</h2>
-    <img src="assets/images/IMG_5587.jpg" alt="Formal portrait of Youssef Sameh">
-    <p>Hi, I'm Youssef Sameh. I'm passionate about [your field — e.g., software engineering, design, etc.].</p>
-
-    <h2>My Work</h2>
-    <img src="assets/images/70.jpg" alt="Project example 1">
-    <img src="assets/images/517725.JPG" alt="Project example 2">
-    <img src="assets/images/IMG_5861.jpg" alt="Project example 3">
-
-    <h2>My CV</h2>
-    <a class="cv-link" href="assets/docs/Youssef%20Sameh%20CV.pdf" target="_blank" rel="noopener noreferrer">
+  <!-- HEADER / HERO -->
+  <section class="text-center py-16">
+    <img src="assets/IMG_5587.jpg" alt="Formal portrait of Youssef Sameh" 
+         class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-gray-700 shadow-lg mx-auto">
+    <h1 class="text-4xl font-bold mt-6">Youssef Sameh</h1>
+    <p class="text-gray-400 text-lg mt-2">Welcome to my portfolio</p>
+    <a href="assets/Youssef Sameh CV.pdf" target="_blank" rel="noopener noreferrer"
+       class="inline-block bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg shadow-lg transform hover:scale-105 mt-4">
       View My CV
     </a>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold text-center mb-6">About Me</h2>
+    <p class="text-gray-300 text-lg text-center">
+      Hi! I'm Youssef Sameh, passionate about technology, problem-solving, and continuous learning. 
+      This portfolio showcases my journey, projects, and achievements.
+    </p>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section class="bg-gray-800 py-12">
+    <h2 class="text-3xl font-bold text-center mb-10">Certificates</h2>
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto px-6">
+      
+      <!-- OOP Certificate -->
+      <div class="bg-gray-700 rounded-xl shadow-md p-4 text-center">
+        <img src="assets/70.jpg" alt="OOP Certificate" 
+             class="rounded-lg mx-auto cursor-pointer hover:scale-105 transition-transform"
+             onclick="document.getElementById('modal-oop').classList.remove('hidden')">
+        <p class="mt-3 font-semibold">Object-Oriented Programming</p>
+      </div>
+
+      <!-- PES Certificate -->
+      <div class="bg-gray-700 rounded-xl shadow-md p-4 text-center">
+        <img src="assets/517725.JPG" alt="PES Certificate" 
+             class="rounded-lg mx-auto cursor-pointer hover:scale-105 transition-transform"
+             onclick="document.getElementById('modal-pes').classList.remove('hidden')">
+        <p class="mt-3 font-semibold">Problem-Solving & Competitive Programming</p>
+      </div>
+
+      <!-- ECPC Certificate -->
+      <div class="bg-gray-700 rounded-xl shadow-md p-4 text-center">
+        <img src="assets/IMG_5861.jpg" alt="ECPC Certificate" 
+             class="rounded-lg mx-auto cursor-pointer hover:scale-105 transition-transform"
+             onclick="document.getElementById('modal-ecpc').classList.remove('hidden')">
+        <p class="mt-3 font-semibold">ECPC Participation</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATE MODALS -->
+  <div id="modal-oop" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+    <div class="relative max-w-4xl max-h-[80vh]">
+      <img src="assets/70.jpg" alt="OOP Certificate" class="max-w-full max-h-full rounded-lg">
+      <button onclick="document.getElementById('modal-oop').classList.add('hidden')" 
+              class="absolute -top-4 -right-4 bg-red-600 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold">&times;</button>
+    </div>
   </div>
+
+  <div id="modal-pes" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+    <div class="relative max-w-4xl max-h-[80vh]">
+      <img src="assets/517725.JPG" alt="PES Certificate" class="max-w-full max-h-full rounded-lg">
+      <button onclick="document.getElementById('modal-pes').classList.add('hidden')" 
+              class="absolute -top-4 -right-4 bg-red-600 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold">&times;</button>
+    </div>
+  </div>
+
+  <div id="modal-ecpc" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+    <div class="relative max-w-4xl max-h-[80vh]">
+      <img src="assets/IMG_5861.jpg" alt="ECPC Certificate" class="max-w-full max-h-full rounded-lg">
+      <button onclick="document.getElementById('modal-ecpc').classList.add('hidden')" 
+              class="absolute -top-4 -right-4 bg-red-600 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold">&times;</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-center py-6 mt-12">
+    <p class="text-gray-400">&copy; 2025 Youssef Sameh. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
